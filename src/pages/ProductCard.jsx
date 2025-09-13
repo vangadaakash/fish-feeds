@@ -6,9 +6,9 @@ import video from '/images/video.mp4';
 const ProductsPreviewBanner = () => {
   const videoRef = useRef(null);
 
-  const handleButtonClick = () => {
-    // Redirect to products page
-    window.location.href = '/products';
+const handleButtonClick = () => {
+    // You can add extra logic here if needed
+    navigate("/products");
   };
 
   // Function to play the video

@@ -7,7 +7,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Add scroll effect
+  // Scroll effect
   useState(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -16,9 +16,12 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const whatsappLink = "https://wa.me/918933095000"; // ✅ Your correct WhatsApp link
+
   return (
     <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-lg py-2" : "bg-gradient-to-r from-teal-700 to-blue-800 py-3"}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
+
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3">
           <div className="relative">
@@ -41,40 +44,28 @@ function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link
-            to="/"
-            className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}
-          >
+          <Link to="/" className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}>
             Home
             <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-teal-600" : "bg-amber-300"}`}></span>
           </Link>
-          <Link
-            to="/products"
-            className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}
-          >
+          <Link to="/products" className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}>
             Products
             <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-teal-600" : "bg-amber-300"}`}></span>
           </Link>
-          <Link
-            to="/about"
-            className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}
-          >
+          <Link to="/about" className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}>
             About
             <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-teal-600" : "bg-amber-300"}`}></span>
           </Link>
-          <Link
-            to="/contact"
-            className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}
-          >
+          <Link to="/contact" className={`font-medium py-2 relative group transition duration-300 ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-amber-300"}`}>
             Contact
             <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-teal-600" : "bg-amber-300"}`}></span>
           </Link>
-          
-          {/* WhatsApp Contact Button */}
+
+          {/* WhatsApp Button */}
           <a
-            href="https://wa.me/918933095000"
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition duration-300 shadow-md hover:shadow-lg ml-4"
@@ -84,18 +75,17 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu */}
         <div className="md:hidden flex items-center space-x-4">
-          {/* WhatsApp icon on mobile */}
           <a
-            href="https://wa.me/yournumber"
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className={`p-2 rounded-full transition duration-300 ${isScrolled ? "bg-green-500 text-white" : "bg-white text-green-600"}`}
           >
             <FaWhatsapp className="text-lg" />
           </a>
-          
+
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className={`p-2 rounded-md transition duration-300 ${isScrolled ? "text-gray-800 hover:bg-gray-100" : "text-white hover:bg-blue-700"}`}
@@ -105,42 +95,26 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav Links */}
+      {/* Mobile Links */}
       {isOpen && (
         <div className={`md:hidden absolute top-full left-0 w-full shadow-lg ${isScrolled ? "bg-white" : "bg-blue-800"}`}>
           <div className="container mx-auto px-4 py-3 flex flex-col space-y-1">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}
-            >
+            <Link to="/" onClick={() => setIsOpen(false)} className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}>
               Home
             </Link>
-            <Link
-              to="/products"
-              onClick={() => setIsOpen(false)}
-              className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}
-            >
+            <Link to="/products" onClick={() => setIsOpen(false)} className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}>
               Products
             </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}
-            >
+            <Link to="/about" onClick={() => setIsOpen(false)} className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}>
               About
             </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}
-            >
+            <Link to="/contact" onClick={() => setIsOpen(false)} className={`py-3 px-4 rounded-lg transition duration-300 ${isScrolled ? "text-gray-700 hover:bg-teal-50 hover:text-teal-600" : "text-white hover:bg-blue-700"}`}>
               Contact
             </Link>
-            
-            {/* WhatsApp button in mobile menu */}
+
+            {/* Fixed WhatsApp Button in Mobile Menu */}
             <a
-              href="https://wa.me/yournumber"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

@@ -1,5 +1,6 @@
 // ProductsPreviewBanner.jsx
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import img3 from '/images/img3.jpg';
 import video from '/images/video.mp4';
 

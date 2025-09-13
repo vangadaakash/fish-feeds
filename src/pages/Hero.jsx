@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from 'react';
 import './Hero.css'; // This imports your CSS file
-import home from '../assets/home.jpg';
-import home1 from '../assets/home1.jpg';
-import home5 from '../assets/home5.png';
-import home4 from '../assets/home4.png';
-import home6 from '../assets/home6.jpg';
+import home from "/images/home.jpg";
+import home1 from "/images/home1.jpg";
+import home4 from "/images/home4.jpg";
+import home5 from "/images/home5.jpg";
+import home6 from "/images/home6.jpg";
+
 
 function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);

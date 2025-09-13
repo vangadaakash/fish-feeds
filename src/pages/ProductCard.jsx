@@ -5,11 +5,12 @@ import video from '/images/video.mp4';
 
 const ProductsPreviewBanner = () => {
   const videoRef = useRef(null);
-
+const navigate = useNavigate(); // Initialize the navigate function
 const handleButtonClick = () => {
     // You can add extra logic here if needed
     navigate("/products");
   };
+
 
   // Function to play the video
   const playVideo = () => {

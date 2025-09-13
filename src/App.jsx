@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,HashRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -13,6 +13,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
+    <HashRouter>
     <Router>
       <Navbar />
       <ScrollToTop />
@@ -26,6 +27,7 @@ function App() {
        <WhatsAppButton /> 
       <Footer />
     </Router>
+    </HashRouter>
   );
 }
 

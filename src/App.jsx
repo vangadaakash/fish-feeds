@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Testimonials from "./components/Testimonals";
 import Contact from "./pages/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTop from "./components/ScrollToTop";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';

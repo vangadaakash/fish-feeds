@@ -16,7 +16,6 @@ function Home() {
       <About />
       <Gallery />
       <ProductCard />
-      
       <Testimonials />
       <Contact />
     </div>

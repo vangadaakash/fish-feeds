@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from 'react';
-import './hero.css'; // This imports your CSS file
+import './Hero.css'; // This imports your CSS file
 import home from '../assets/home.jpg';
 import home1 from '../assets/home1.jpg';
 import home5 from '../assets/home5.png';

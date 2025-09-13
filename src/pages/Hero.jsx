@@ -5,8 +5,8 @@ import React from 'react';
 import './Hero.css'; // This imports your CSS file
 import home from "/images/home.jpg";
 import home1 from "/images/home1.jpg";
-import home4 from "/images/home4.jpg";
-import home5 from "/images/home5.jpg";
+import home4 from "/images/home4.png";
+import home5 from "/images/home5.png";
 import home6 from "/images/home6.jpg";
 
 

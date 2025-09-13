@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import img1 from "../assets/img1.jpg";
-import img2 from "../assets/img2.jpg";
+import img1 from "/images/img1.jpg";
+import img2 from "/images/img2.jpg";
 
 // Combined feed samples data with additional information
 const feedProducts = [

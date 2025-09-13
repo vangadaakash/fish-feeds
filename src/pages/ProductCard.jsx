@@ -1,7 +1,7 @@
 // ProductsPreviewBanner.jsx
 import React, { useRef, useEffect } from 'react';
-import img3 from '../assets/img3.jpg';
-import video from '../assets/video.mp4';
+import img3 from '/images/img3.jpg';
+import video from '/images/video.mp4';
 
 const ProductsPreviewBanner = () => {
   const videoRef = useRef(null);

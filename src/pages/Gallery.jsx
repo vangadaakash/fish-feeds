@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import product1 from '../assets/product1.png'; // Example product images
-import product2 from '../assets/product2.png'; // Example product images
-import product3 from '../assets/product3.png'; // Example product images
-import product4 from '../assets/product4.png'; // Example product images
-import product5 from '../assets/product5.png'; // Example product images
+import product1 from '/images/product1.png'; // Example product images
+import product2 from '/images/product2.png'; // Example product images
+import product3 from '/images/product3.png'; // Example product images
+import product4 from '/images/product4.png'; // Example product images
+import product5 from '/images/product5.png'; // Example product images
 
 const Gallery = () => {
   const navigate = useNavigate(); // Initialize the navigate function

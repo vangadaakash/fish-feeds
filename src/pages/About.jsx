@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaMedal, FaHeart, FaChartLine, FaLeaf } from "react-icons/fa";
 import './About.css';
-import image from '../assets/image.png';
+import image from '/images/image.png';
 
 
 const ChooseUs = () => {

@@ -5,57 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Populerr Fish Feeds</title>
-    
-    <!-- Configuration note for Vercel deployment -->
-    <style>
-      .config-note {
-        display: none; /* Hidden by default, only shows when needed */
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #ff9800;
-        color: white;
-        padding: 15px;
-        font-family: monospace;
-        font-size: 14px;
-        z-index: 10000;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-      }
-      .config-note pre {
-        background: rgba(0,0,0,0.2);
-        padding: 10px;
-        border-radius: 4px;
-        overflow-x: auto;
-      }
-      .config-note .toggle {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-    </style>
-    <script>
-      // Show config note if URL has #show-config parameter
-      document.addEventListener('DOMContentLoaded', function() {
-        if (window.location.hash === '#show-config') {
-          const note = document.createElement('div');
-          note.className = 'config-note';
-          note.innerHTML = `
-            <span class="toggle" onclick="this.parentNode.style.display='none'">X</span>
-            <strong>Vercel Configuration Note:</strong> To fix 404 errors on page refresh, create a vercel.json file in your project root with this content:
-            <pre>{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}</pre>
-            <div>This ensures all routes are handled by your React app.</div>
-          `;
-          document.body.appendChild(note);
-        }
-      });
-    </script>
   </head>
   <body>
     <div id="root"></div>

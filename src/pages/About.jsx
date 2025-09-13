@@ -77,7 +77,7 @@ const ChooseUs = () => {
 };
 
 const AboutUs = () => {
-  const teamMembers = [
+  /*const teamMembers = [
     {
       id: 1,
       name: 'Rajesh Kumar',
@@ -107,7 +107,7 @@ const AboutUs = () => {
       image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
     }
   ];
-
+*/
   return (
     <div className="about-us-page">
       {/* Centered About Us Heading */}
@@ -168,7 +168,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section 
       <section className="team-section">
         <div className="container">
           <h2>Meet Our Experts</h2>
@@ -187,7 +187,7 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 };

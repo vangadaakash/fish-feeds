@@ -17,7 +17,7 @@ function Home() {
       <Gallery />
       <ProductCard />
       
-      
+      <Testimonials />
       <Contact />
     </div>
   );

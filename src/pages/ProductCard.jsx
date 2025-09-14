@@ -2,8 +2,9 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import img3 from '/images/img3.jpg';
-import video from '/images/video.mp4';
-
+import banner from '/images/banner.jpg';
+// import video from '/images/video.mp4';
+import process from '/images/process.mp4'; // Ensure the video is in the public/videos directory
 const ProductsPreviewBanner = () => {
   const videoRef = useRef(null);
 const navigate = useNavigate(); // Initialize the navigate function
@@ -62,7 +63,7 @@ const handleButtonClick = () => {
               className="w-full h-64 sm:h-80 md:h-96 rounded-xl shadow-md"
               controls
             >
-              <source src={video} type="video/mp4" />
+              <source src={process} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

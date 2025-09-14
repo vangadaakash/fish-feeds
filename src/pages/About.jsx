@@ -131,8 +131,13 @@ const AboutUs = () => {
           <div className="story-content">
             <div className="story-text">
               <h2>Our Story</h2>
-              <p>Founded in 2005, Populerr Fish Feeds began with a simple mission: to provide high-quality, affordable fish feed to local fish farmers. What started as a small operation has grown into one of the leading fish feed manufacturers in the region, serving thousands of aquaculture professionals.</p>
-              <p>Our journey has been guided by a commitment to research and innovation. We've invested heavily in developing scientifically-formulated feeds that maximize growth while minimizing environmental impact. Today, our products are trusted by fish farmers across the country for their consistent quality and proven results.</p>
+              <p>At Populerr Fish Feeds, we specialize in high-quality, nutritionally balanced fish feed designed to boost productivity and ensure the health and well-being of aquatic life. More than just a feed manufacturer, we are a driving force behind the sustainable growth of aquaculture.
+</p>
+              <p>Founded with a vision to revolutionize fish farming through superior nutrition, we combine scientific innovation, environmental responsibility, and farmer-focused solutions to help aquaculture thrive.
+</p>
+<p>Our team of experienced aquaculture experts, nutritionists, and engineers has developed a wide range of specialized fish feeds, carefully formulated to meet the diverse needs of different water species. With a state-of-the-art production facility, advanced quality testing labs, and efficient packaging systems, we ensure precision, consistency, and top quality in every single unit.
+</p>
+<p>Whether you're a small-scale farmer or a large commercial aquaculture operator, Populerr Fish Feeds is your trusted partner — providing expert guidance, a consistent supply, and a superior quality product that drives success.</p>
             </div>
             <div className="story-image">
               <img src={image} alt="Fish farming" />

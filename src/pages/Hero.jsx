@@ -1,4 +1,3 @@
-// src/sections/HeroSection.jsx
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from 'react';
@@ -6,29 +5,15 @@ import './Hero.css'; // This imports your CSS file
 
 function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   // Array of images using public folder paths
   const slides = [
-    {
-      image: '/images/home.jpg',
-      alt: ""
-    },
-    {
-      image: '/images/home1.jpg',
-      alt: ""
-    },
-    {
-      image: '/images/home5.png',
-      alt: ""
-    },
-    {
-      image: '/images/home4.png',
-      alt: "Healthy fish in net"
-    },
-    {
-      image: '/images/home6.jpg',
-      alt: "Fish feed production"
-    }
+    { image: '/images/home.jpg', alt: "" },
+    { image: '/images/home1.jpg', alt: "" },
+    { image: '/images/home5.png', alt: "" },
+    { image: '/images/home4.png', alt: "Healthy fish in net" },
+    { image: '/images/home6.jpg', alt: "Fish feed production" },
+    // { image: '/images/banner.jpg', alt: "Promotional Banner" }
   ];
 
   // Auto-rotate slides every 3 seconds
@@ -36,7 +21,6 @@ function HeroSection() {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
     }, 3000);
-
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -58,8 +42,8 @@ function HeroSection() {
         ))}
       </div>
 
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-teal-800/70"></div>
+      {/* Overlay gradient - lighter for more visible background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-teal-800/20"></div>
       
       {/* Animated floating elements */}
       <div className="absolute top-20 left-10 w-16 h-16 bg-yellow-400 rounded-full opacity-20 animate-pulse-slow"></div>
@@ -122,28 +106,16 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-yellow-400 scale-125' : 'bg-white/50'
-            }`}
-            onClick={() => setCurrentSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+      {/* Slide indicators - REMOVED */}
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
-}
+} 
 
 export default HeroSection;

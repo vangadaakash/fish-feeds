@@ -6,6 +6,8 @@
   box-sizing: border-box;
   padding: 16px 0;
   background: #fff;
+  padding-top: 80px;
+  
 }
 
 /* Responsive flex layout */

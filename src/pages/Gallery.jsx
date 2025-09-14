@@ -1,20 +1,63 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import product1 from '/images/product1.png'; // Example product images
-import product2 from '/images/product2.png'; // Example product images
-import product3 from '/images/product3.png'; // Example product images
-import product4 from '/images/product4.png'; // Example product images
-import product5 from '/images/product5.png'; // Example product images
+import { useNavigate } from "react-router-dom";
+import productimage from '/images/productimage.jpg';
+import process1 from '/images/process1.mp4';
+import process2 from '/images/process2.mp4';
+import process3 from '/images/process3.mp4';
+import process4 from '/images/process4.mp4';
+import process5 from '/images/process5.mp4';
+import result from '/images/result.mp4';
+import result1 from '/images/result1.jpg';
+
+
+
 
 const Gallery = () => {
-  const navigate = useNavigate(); // Initialize the navigate function
-  
+  const navigate = useNavigate();
+
+  // Use an array of objects with type and src
   const manufacturingProducts = [
-    product1,
-    product2,
-    product3,
-    product4,
-    product5
+    { type: "image", src: productimage },
+    { type: "video", src: process1 },
+    { type: "video", src: process2 },
+    { type: "video", src: process3 },
+    { type: "video", src: process4 },
+    { type: "video", src: process5 }
+  ];
+
+  // Product results data - replace these with your actual images/videos
+  const productResults = [
+    { 
+      type: "image", 
+      src: result1,
+      // title: "Growth Performance",
+      // description: "27% average weight gain improvement"
+    },
+    
+    { 
+      type: "video", 
+      src: result,
+      // title: "Health Improvement",
+      // description: "35% increase in disease resistance"
+    },
+    // { 
+    //   type: "image", 
+    //   src: result2,
+    //   // title: "Feed Conversion Ratio",
+    //   // description: "Achieved 1.2:1 conversion rate"
+    // },
+    // { 
+    //   type: "image", 
+    //   src: "/images/result4.jpg",
+    //   // title: "Survival Rates",
+    //   // description: "94% survival rate in controlled studies"
+    // },
+    // { 
+    //   type: "image", 
+    //   src: "/images/result5.jpg",
+    //   // title: "Cost Efficiency",
+    //   // description: "15% reduction in operational costs"
+    // }
   ];
 
   const productCategories = [
@@ -24,32 +67,57 @@ const Gallery = () => {
     { name: "Feeding Equipment", count: 7 }
   ];
 
-  // Function to handle Contact Us button click
   const handleContactClick = () => {
-    navigate('/contact'); // Navigate to the contact page
+    navigate('/contact');
   };
 
   // Carousel Component with Modern UI
-  const Carousel = ({ images, interval = 4000, pauseOnHover = true }) => {
+  const Carousel = ({ items, interval = 4000, pauseOnHover = true }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
-      if (!images || images.length <= 1) return;
+      if (!items || items.length <= 1) return;
       const id = setInterval(() => {
         if (!isPaused) {
           setCurrentIndex((prev) =>
-            prev === images.length - 1 ? 0 : prev + 1
+            prev === items.length - 1 ? 0 : prev + 1
           );
         }
       }, interval);
       return () => clearInterval(id);
-    }, [images.length, interval, isPaused]);
+    }, [items.length, interval, isPaused]);
 
     const prevSlide = () =>
-      setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+      setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
     const nextSlide = () =>
-      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+
+    // Helper to render either image or video
+    const renderMedia = (item, alt, className) => {
+      if (item.type === "image") {
+        return (
+          <img
+            src={item.src}
+            alt={alt}
+            className={className}
+            draggable="false"
+          />
+        );
+      } else if (item.type === "video") {
+        return (
+          <video
+            src={item.src}
+            className={className}
+            controls
+            autoPlay
+            loop
+            muted
+          />
+        );
+      }
+      return null;
+    };
 
     return (
       <div
@@ -57,28 +125,35 @@ const Gallery = () => {
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
       >
-        {/* Main Image Container */}
-        <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-          <img
-            src={images[currentIndex]}
-            alt={`Manufacturing product ${currentIndex + 1}`}
-            className="w-full h-[500px] object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
-            draggable="false"
-          />
-          
+        {/* Main Media Container */}
+        <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 flex items-center justify-center h-[500px]">
+          {renderMedia(
+            items[currentIndex],
+            `Manufacturing product ${currentIndex + 1}`,
+            "w-full h-[500px] object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
+          )}
+
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
-          
+
+          {/* Content Overlay for Results Carousel */}
+          {items[currentIndex].title && (
+            <div className="absolute bottom-8 left-0 right-0 text-center text-white z-10">
+              <h3 className="text-2xl font-bold mb-2">{items[currentIndex].title}</h3>
+              <p className="text-lg">{items[currentIndex].description}</p>
+            </div>
+          )}
+
           {/* Image Counter */}
           <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
-            {currentIndex + 1} / {images.length}
+            {currentIndex + 1} / {items.length}
           </div>
-          
+
           {/* Left Arrow */}
           <button
             onClick={prevSlide}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 hover:scale-110"
-            aria-label="Previous image"
+            aria-label="Previous"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -89,7 +164,7 @@ const Gallery = () => {
           <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 hover:scale-110"
-            aria-label="Next image"
+            aria-label="Next"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -99,22 +174,22 @@ const Gallery = () => {
 
         {/* Thumbnail Navigation */}
         <div className="flex justify-center mt-6 space-x-4">
-          {images.map((img, index) => (
+          {items.map((item, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-20 h-20 rounded-lg overflow-hidden shadow-md transition-all duration-300 ${
-                currentIndex === index 
-                  ? "ring-4 ring-blue-500 ring-opacity-80 scale-110" 
+                currentIndex === index
+                  ? "ring-4 ring-blue-500 ring-opacity-80 scale-110"
                   : "opacity-70 hover:opacity-100 hover:scale-105"
               }`}
-              aria-label={`View image ${index + 1}`}
+              aria-label={`View item ${index + 1}`}
             >
-              <img
-                src={img}
-                alt={`Thumbnail ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              {renderMedia(
+                item,
+                `Thumbnail ${index + 1}`,
+                "w-full h-full object-cover"
+              )}
             </button>
           ))}
         </div>
@@ -135,22 +210,7 @@ const Gallery = () => {
         
         {/* Carousel Section */}
         <div className="mb-20">
-          <Carousel images={manufacturingProducts} interval={4000} />
-        </div>
-        
-        {/* Product Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {productCategories.map((category, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{category.name}</h3>
-              <p className="text-gray-600">{category.count} products available</p>
-            </div>
-          ))}
+          <Carousel items={manufacturingProducts} interval={4000} />
         </div>
         
         {/* Product Features */}
@@ -185,13 +245,44 @@ const Gallery = () => {
             <p className="text-gray-600">Environmentally responsible manufacturing processes with minimal ecological impact.</p>
           </div>
         </div>
-        
+
+        {/* Our Product Results */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Product Results</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See the measurable benefits of our premium aquaculture nutrition products.
+            </p>
+          </div>
+          
+          {/* Results Carousel */}
+          <div className="mb-12">
+            <Carousel items={productResults} interval={5000} />
+          </div>
+          
+          {/* Stats Section */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow-md text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
+              <div className="text-lg font-medium text-gray-700">Customer Satisfaction</div>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">500+</div>
+              <div className="text-lg font-medium text-gray-700">Successful Farms</div>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md text-center">
+              <div className="text-4xl font-bold text-purple-600 mb-2">15%</div>
+              <div className="text-lg font-medium text-gray-700">Cost Reduction</div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Interested in Our Products?</h2>
           <p className="text-xl mb-6 max-w-3xl mx-auto">Contact our sales team to learn more about our manufacturing products and request a catalog.</p>
           <button 
-            onClick={handleContactClick} // Use the click handler
+            onClick={handleContactClick}
             className="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors duration-300 transform hover:-translate-y-1"
           >
             Contact Us

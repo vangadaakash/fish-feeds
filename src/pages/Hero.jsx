@@ -11,16 +11,16 @@ function HeroSection() {
     { image: '/images/home.jpg', alt: "" },
     { image: '/images/home1.jpg', alt: "" },
     { image: '/images/home5.png', alt: "" },
-    { image: '/images/home4.png', alt: "Healthy fish in net" },
-    { image: '/images/home6.jpg', alt: "Fish feed production" },
-    // { image: '/images/banner.jpg', alt: "Promotional Banner" }
+    { image: '/images/home4.png', alt: "" },
+    { image: '/images/home6.jpg', alt: "" },
+    
   ];
 
   // Auto-rotate slides every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [slides.length]);
 

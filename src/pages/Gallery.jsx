@@ -9,13 +9,9 @@ import process5 from '/images/process5.mp4';
 import result from '/images/result.mp4';
 import result1 from '/images/result1.jpg';
 
-
-
-
 const Gallery = () => {
   const navigate = useNavigate();
 
-  // Use an array of objects with type and src
   const manufacturingProducts = [
     { type: "image", src: productimage },
     { type: "video", src: process1 },
@@ -25,54 +21,17 @@ const Gallery = () => {
     { type: "video", src: process5 }
   ];
 
-  // Product results data - replace these with your actual images/videos
   const productResults = [
-    { 
-      type: "image", 
-      src: result1,
-      // title: "Growth Performance",
-      // description: "27% average weight gain improvement"
-    },
-    
-    { 
-      type: "video", 
-      src: result,
-      // title: "Health Improvement",
-      // description: "35% increase in disease resistance"
-    },
-    // { 
-    //   type: "image", 
-    //   src: result2,
-    //   // title: "Feed Conversion Ratio",
-    //   // description: "Achieved 1.2:1 conversion rate"
-    // },
-    // { 
-    //   type: "image", 
-    //   src: "/images/result4.jpg",
-    //   // title: "Survival Rates",
-    //   // description: "94% survival rate in controlled studies"
-    // },
-    // { 
-    //   type: "image", 
-    //   src: "/images/result5.jpg",
-    //   // title: "Cost Efficiency",
-    //   // description: "15% reduction in operational costs"
-    // }
-  ];
-
-  const productCategories = [
-    { name: "Fish Feed Pellets", count: 12 },
-    { name: "Nutritional Supplements", count: 8 },
-    { name: "Specialty Feeds", count: 5 },
-    { name: "Feeding Equipment", count: 7 }
+    { type: "image", src: result1 },
+    { type: "video", src: result }
   ];
 
   const handleContactClick = () => {
     navigate('/contact');
   };
 
-  // Carousel Component with Modern UI
-  const Carousel = ({ items, interval = 4000, pauseOnHover = true }) => {
+  // ✅ Memoized Carousel Component
+  const Carousel = React.memo(({ items, interval = 4000, pauseOnHover = true }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
 
@@ -93,7 +52,7 @@ const Gallery = () => {
     const nextSlide = () =>
       setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
 
-    // Helper to render either image or video
+    // ✅ Updated renderMedia with playsInline and preload
     const renderMedia = (item, alt, className) => {
       if (item.type === "image") {
         return (
@@ -113,6 +72,8 @@ const Gallery = () => {
             autoPlay
             loop
             muted
+            playsInline
+            preload="auto"
           />
         );
       }
@@ -125,18 +86,15 @@ const Gallery = () => {
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
       >
-        {/* Main Media Container */}
-        <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 flex items-center justify-center h-[500px]">
+        <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 flex items-center justify-center h-[500px] video-container">
           {renderMedia(
             items[currentIndex],
             `Manufacturing product ${currentIndex + 1}`,
             "w-full h-[500px] object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
           )}
 
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
 
-          {/* Content Overlay for Results Carousel */}
           {items[currentIndex].title && (
             <div className="absolute bottom-8 left-0 right-0 text-center text-white z-10">
               <h3 className="text-2xl font-bold mb-2">{items[currentIndex].title}</h3>
@@ -144,12 +102,10 @@ const Gallery = () => {
             </div>
           )}
 
-          {/* Image Counter */}
           <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
             {currentIndex + 1} / {items.length}
           </div>
 
-          {/* Left Arrow */}
           <button
             onClick={prevSlide}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 hover:scale-110"
@@ -160,7 +116,6 @@ const Gallery = () => {
             </svg>
           </button>
 
-          {/* Right Arrow */}
           <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 hover:scale-110"
@@ -172,7 +127,6 @@ const Gallery = () => {
           </button>
         </div>
 
-        {/* Thumbnail Navigation */}
         <div className="flex justify-center mt-6 space-x-4">
           {items.map((item, index) => (
             <button
@@ -195,26 +149,24 @@ const Gallery = () => {
         </div>
       </div>
     );
-  };
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Manufacturing Products</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Premium aquaculture nutrition products crafted with precision and expertise for optimal fish health and growth.
           </p>
         </div>
-        
-        {/* Carousel Section */}
+
         <div className="mb-20">
           <Carousel items={manufacturingProducts} interval={4000} />
         </div>
-        
-        {/* Product Features */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {/* Feature Cards unchanged */}
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -224,7 +176,7 @@ const Gallery = () => {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
             <p className="text-gray-600">Manufactured with the highest quality ingredients and strict quality control standards.</p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -234,7 +186,7 @@ const Gallery = () => {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced Formulation</h3>
             <p className="text-gray-600">Scientifically developed formulas for optimal nutrition and fish growth performance.</p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -246,7 +198,6 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Our Product Results */}
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Product Results</h2>
@@ -254,13 +205,11 @@ const Gallery = () => {
               See the measurable benefits of our premium aquaculture nutrition products.
             </p>
           </div>
-          
-          {/* Results Carousel */}
+
           <div className="mb-12">
             <Carousel items={productResults} interval={5000} />
           </div>
-          
-          {/* Stats Section */}
+
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-md text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
@@ -277,7 +226,6 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Interested in Our Products?</h2>
           <p className="text-xl mb-6 max-w-3xl mx-auto">Contact our sales team to learn more about our manufacturing products and request a catalog.</p>

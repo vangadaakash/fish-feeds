@@ -121,7 +121,7 @@ const AboutUs = () => {
       <section className="hero-section">
         <div className="hero-content">
           <h1>About Populerr Fish Feeds</h1>
-          <p>Leading the way in sustainable aquaculture nutrition since 2005</p>
+          <p>Leading the way in sustainable aquaculture nutrition</p>
         </div>
       </section>
 

@@ -39,7 +39,7 @@ function Footer() {
                 {/* Contact & Map */}
                 <div>
                     <h3 className="text-xl font-semibold mb-4 text-white">Contact</h3>
-                    <p>Email: populerrfishfeed@gmail.com</p>
+                    <p>Email: populerrfishfeeds@gmail.com</p>
                     <p>Phone: +91 8933095000</p>
                     <p className="mt-2">
                         Address: <br /> Mehnagar, Shah Dewait, Azamgarh,

@@ -75,7 +75,7 @@ const ContactUs = () => {
               <div className="icon-container">✉</div>
               <div className="contact-text">
                 <h4>Email</h4>
-                <p>populerrfishfeed@gmail.com</p>
+                <p>populerrfishfeeds@gmail.com</p>
               </div>
             </div>
           </div>
@@ -114,17 +114,19 @@ const ContactUs = () => {
                 value={formData.product}
                 onChange={handleChange}
               > 
-                <option value="select">Select Product</option>
-<option value="34/5 (1.5mm)">34/5 (1.5mm)</option>
-<option value="32/5 (2mm)">32/5 (2mm)</option>
-<option value="30/4 (3mm)">30/4 (3mm)</option>
-<option value="28/5 (4mm)">28/5 (4mm)</option>
-<option value="28/4 (4mm)">28/4 (4mm)</option>
-<option value="28/4 (3mm)">28/4 (3mm)</option>
-<option value="24/4 (4mm)">24/4 (4mm)</option>
-<option value="20/4 (3mm)">20/4 (3mm)</option>
-<option value="Other Products">Other Products</option>
-              </select>
+                
+  <option value="">Select Product</option>
+  <option value="0.8MM">0.8MM</option>
+  <option value="1MM">1MM</option>
+  <option value="1.5MM">1.5MM</option>
+  <option value="2MM">2MM</option>
+  <option value="3MM">3MM</option>
+  <option value="4MM">4MM</option>
+  <option value="5MM">5MM</option>
+  <option value="6MM">6MM</option>
+  <option value="Other Products">Other Products</option>
+</select>
+             
             </div>
 
             <div className="form-group">

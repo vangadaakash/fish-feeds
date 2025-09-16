@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
       
       <header style={styles.header}>
         <h1 style={styles.title}>Terms and Conditions</h1>
-        <p style={styles.date}>Last Updated: {new Date().toLocaleDateString()}</p>
+        {/* <p style={styles.date}>Last Updated: {new Date().toLocaleDateString()}</p> */}
       </header>
       
       <div style={styles.content}>

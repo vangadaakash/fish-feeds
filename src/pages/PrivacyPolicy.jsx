@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
       
       <header style={styles.header}>
         <h1 style={styles.title}>Privacy Policy</h1>
-        <p style={styles.date}>Last Updated: {new Date().toLocaleDateString()}</p>
+        {/* <p style={styles.date}>Last Updated: {new Date().toLocaleDateString()}</p> */}
       </header>
       
       <div style={styles.content}>

@@ -9,8 +9,7 @@ const Gallery = () => {
   { type: "image", src: "/images/home.jpg" },
   { type: "image", src: "/images/home1.jpg" },
   { type: "image", src: "/images/home3.jpg" },
-  { type: "image", src: "/images/home4.png" },
-  { type: "image", src: "/images/home5.jpg" },
+
   { type: "video", src: "/images/process1.mp4" },
   { type: "video", src: "/images/process2.mp4" },
   { type: "video", src: "/images/process3.mp4" },

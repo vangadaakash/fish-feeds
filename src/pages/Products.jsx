@@ -53,12 +53,12 @@ const products = [
     fat: [6, 5, 4],
     image: sample7,
   },
-  // {
-  //   size: "6MM",
-  //   protein: [32, 28, 24, 20],
-  //   fat: [6, 5, 4],
-  //   image: "/images/6mm.jpg",
-  // },
+  {
+    size: "6MM",
+    protein: [32, 28, 24, 20],
+    fat: [6, 5, 4],
+    image: sample7,
+  },
 ];
 
 // ProductCard Component

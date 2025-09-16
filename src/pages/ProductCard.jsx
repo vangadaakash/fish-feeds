@@ -75,7 +75,7 @@ const handleButtonClick = () => {
           <div className="md:w-1/2 order-2 md:order-1">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-4">Premium Aquaculture Solutions</h2>
             <p className="text-gray-700 mb-4">
-              At Populerr Fish Feed, we combine 15+ years of aquaculture expertise with cutting-edge nutrition research 
+              At Populerr Fish Feed, we combine aquaculture expertise with cutting-edge nutrition research 
               to deliver feeds that maximize growth, health, and profitability for fish farmers.
             </p>
             <p className="text-gray-700 mb-6">

@@ -8,12 +8,28 @@ import process4 from '/images/process4.mp4';
 import process5 from '/images/process5.mp4';
 import result from '/images/result.mp4';
 import result1 from '/images/result1.jpg';
+import home from '/images/home.jpg';
+import home1 from '/images/home1.jpg';
+// import home2 from '/images/home2.jpg';
+import home3 from '/images/home3.jpg';
+import home4 from '/images/home4.png';
+import home5 from '/images/home5.png';
+// import home6 from '/images/home6.jpg';
+
 
 const Gallery = () => {
   const navigate = useNavigate();
 
   const manufacturingProducts = [
     { type: "image", src: productimage },
+    { type: "image", src: home },
+    { type: "image", src: home1 },
+    // { type: "image", src: home2 },
+    { type: "image", src: home3 },
+    { type: "image", src: home4 },
+    { type: "image", src: home5 },
+    // { type: "image", src: home6 },
+
     { type: "video", src: process1 },
     { type: "video", src: process2 },
     { type: "video", src: process3 },
@@ -155,7 +171,7 @@ const Gallery = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Manufacturing Products</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Factory & Production Gallery</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Premium aquaculture nutrition products crafted with precision and expertise for optimal fish health and growth.
           </p>
@@ -197,6 +213,71 @@ const Gallery = () => {
             <p className="text-gray-600">Environmentally responsible manufacturing processes with minimal ecological impact.</p>
           </div>
         </div>
+
+
+        {/* <div className="mb-20">
+          <Carousel items={manufacturingProducts} interval={4000} />
+        </div> */}
+
+{/* NEW SECTION: Lab Testing & Automation */}
+<div className="mb-20">
+  <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">Lab Testing & Process Automation</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    {/* Lab Testing */}
+    <div className="bg-white rounded-xl shadow-md p-6">
+      <img src="/images/labphoto.jpg" alt="Laboratory Testing" className="rounded-lg mb-4 w-full object-cover h-72" />
+      
+      <h3 className="text-xl font-semibold text-blue-800 mb-2">Laboratory Tested & Certified</h3>
+      <p className="text-gray-700 mb-2">
+        Every batch of Populerr Fish Feed undergoes strict quality testing in our modern laboratory. Our expert team ensures that each pellet is:
+      </p>
+      <ul className="list-disc pl-5 text-gray-700 mb-2">
+        <li>✅ Scientifically formulated for maximum fish growth</li>
+        <li>✅ Free from harmful chemicals and contaminants</li>
+        <li>✅ Balanced with the right protein, fat, and minerals</li>
+      </ul>
+      <h4 className="font-semibold text-blue-700 mt-4 mb-2">Our Lab Quality Checks Include:</h4>
+      <ol className="list-decimal pl-5 text-gray-700 mb-2">
+        <li>Moisture Analysis – Longer shelf life & freshness</li>
+        <li>Protein Testing – Strong growth & weight gain</li>
+        <li>Fat & Fiber Testing – Balanced energy & digestion</li>
+        <li>Purity Check – No adulteration, only pure nutrition</li>
+      </ol>
+      <h4 className="font-semibold text-blue-700 mt-4 mb-2">Why Farmers Choose Populerr?</h4>
+      <ul className="list-disc pl-5 text-gray-700 mb-2">
+        <li>Lab-certified quality for healthy and fast-growing fish</li>
+        <li>Consistent size, floating & sinking pellets</li>
+        <li>Increases fish weight in less time</li>
+        <li>Trusted by farmers across India</li>
+      </ul>
+      <h4 className="font-semibold text-blue-700 mt-4 mb-2">Results That Speak</h4>
+      <ul className="list-disc pl-5 text-gray-700">
+        <li>Up to 30% faster growth rate compared to ordinary feeds</li>
+        <li>Higher survival & productivity</li>
+        <li>Guaranteed value for money</li>
+      </ul>
+    </div>
+    {/* PLC Control System */}
+    <div className="bg-white rounded-xl shadow-md p-6">
+      <img src="/images/plcphoto.jpg" alt="PLC Control System" className="rounded-lg mb-4 w-full object-cover h-72" />
+      <h3 className="text-xl font-semibold text-blue-800 mb-2">PLC Control Fish Feed Process System</h3>
+      <p className="text-gray-700 mb-2">
+        Our PLC-Controlled Fish Feed Process Systems are designed to automate every stage of fish feed production with precision, consistency, and efficiency. By integrating advanced PLC and SCADA technology, we help fish feed manufacturers achieve uniform product quality, reduced downtime, and optimized production costs.
+      </p>
+      <h4 className="font-semibold text-blue-700 mt-4 mb-2">Process Flow with PLC Control</h4>
+      <ol className="list-decimal pl-5 text-gray-700">
+        <li>Raw Material Handling – Automatic weighing, dosing, and transfer of raw materials. Integrated sensors ensure accuracy and prevent material loss.</li>
+        <li>Grinding & Mixing – PLC-controlled dosing for precise ingredient blending. Automated mixing cycle improves consistency.</li>
+        <li>Conditioning & Extrusion – Temperature, moisture, and screw speed controlled by PLC. Produces floating or sinking fish feed with exact density.</li>
+        <li>Drying & Cooling – Automated dryers maintain uniform moisture levels. Cooling system ensures feed durability and shelf life.</li>
+        <li>Coating & Oil Spraying – Controlled addition for optimal nutrition and palatability.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+
+
 
         <div className="mb-16">
           <div className="text-center mb-12">

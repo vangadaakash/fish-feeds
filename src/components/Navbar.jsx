@@ -36,7 +36,7 @@ function Navbar() {
           </div>
           <div className="flex flex-col">
             <h1 className={`font-bold text-xl md:text-2xl tracking-tight ${isScrolled ? "text-gray-800" : "text-white"}`}>
-              POPULERR FISH FEED
+              POPULERR FISH FEEDS
             </h1>
             <p className={`text-xs ${isScrolled ? "text-gray-600" : "text-blue-100"} hidden md:block`}>
               Premium Aquaculture Nutrition

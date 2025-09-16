@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaMedal, FaHeart, FaChartLine, FaLeaf } from "react-icons/fa";
 import './About.css';
-import image from '/images/image.png';
+import image from '/images/image.jpg';
 
 
 const ChooseUs = () => {
@@ -118,33 +118,25 @@ const AboutUs = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>About Populerr Fish Feeds</h1>
-          <p>Leading the way in sustainable aquaculture nutrition</p>
-        </div>
-      </section>
-
-      {/* Company Story */}
       <section className="story-section">
-        <div className="container">
-          <div className="story-content">
-            <div className="story-text">
-              <h2>Our Story</h2>
-              <p>At Populerr Fish Feeds, we specialize in high-quality, nutritionally balanced fish feed designed to boost productivity and ensure the health and well-being of aquatic life. More than just a feed manufacturer, we are a driving force behind the sustainable growth of aquaculture.
-</p>
-              <p>Founded with a vision to revolutionize fish farming through superior nutrition, we combine scientific innovation, environmental responsibility, and farmer-focused solutions to help aquaculture thrive.
-</p>
-<p>Our team of experienced aquaculture experts, nutritionists, and engineers has developed a wide range of specialized fish feeds, carefully formulated to meet the diverse needs of different water species. With a state-of-the-art production facility, advanced quality testing labs, and efficient packaging systems, we ensure precision, consistency, and top quality in every single unit.
-</p>
-<p>Whether you're a small-scale farmer or a large commercial aquaculture operator, Populerr Fish Feeds is your trusted partner — providing expert guidance, a consistent supply, and a superior quality product that drives success.</p>
-            </div>
-            <div className="story-image">
-              <img src={image} alt="Fish farming" />
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="container">
+    <h2>Our Story</h2>
+    <div className="story-content">
+      <div className="story-text">
+        <p>At Populerr Fish Feeds, we specialize in high-quality, nutritionally balanced fish feed designed to boost productivity and ensure the health and well-being of aquatic life. More than just a feed manufacturer, we are a driving force behind the sustainable growth of aquaculture.</p>
+        <p>Founded with a vision to revolutionize fish farming through superior nutrition, we combine scientific innovation, environmental responsibility, and farmer-focused solutions to help aquaculture thrive.</p>
+        <p>Our team of experienced aquaculture experts, nutritionists, and engineers has developed a wide range of specialized fish feeds, carefully formulated to meet the diverse needs of different water species. With a state-of-the-art production facility, advanced quality testing labs, and efficient packaging systems, we ensure precision, consistency, and top quality in every single unit.</p>
+        <p>Whether you're a small-scale farmer or a large commercial aquaculture operator, Populerr Fish Feeds is your trusted partner — providing expert guidance, a consistent supply, and a superior quality product that drives success.</p>
+      </div>
+      <div className="story-image">
+        <img src={image} alt="Fish farming" />
+      </div>
+    </div>
+  </div>
+  
+  
+
+</section>
 
       {/* Why Choose Us Section */}
       <ChooseUs />

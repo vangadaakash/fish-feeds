@@ -8,12 +8,14 @@ function HeroSection() {
 
   // Array of images using public folder paths
   const slides = [
-    { image: '/images/home.jpg', alt: "" },
-    { image: '/images/home1.jpg', alt: "" },
-    { image: '/images/home5.png', alt: "" },
-    { image: '/images/home4.png', alt: "" },
-    { image: '/images/home6.jpg', alt: "" },
+    { image: '/images/slide2.jpg', alt: "" },
+    { image: '/images/slide1.jpg', alt: "" },
+    { image: '/images/slide3.jpg', alt: "" },
+    { image: '/images/slide4.jpg', alt: "" },
+    { image: '/images/slide5.jpg', alt: "" },
+    { image: '/images/slide6.jpg', alt: "" },
     
+
   ];
 
   // Auto-rotate slides every 3 seconds
@@ -53,9 +55,9 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-4xl h-full flex flex-col justify-center">
         <div className="mb-6 animate-slide-in-top">
-          <span className="bg-blue-800 text-yellow-400 px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
+          {/* <span className="bg-blue-800 text-yellow-400 px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
             Premium Aquaculture Solutions
-          </span>
+          </span> */}
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 animate-slide-in-left">
@@ -91,8 +93,8 @@ function HeroSection() {
         <div className="mt-10 md:mt-16 bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 max-w-3xl mx-auto border border-white/20 animate-fade-in">
           <div className="grid grid-cols-3 gap-4 md:gap-6">
             <div className="text-center animate-count-up">
-              <div className="text-2xl md:text-3xl font-bold text-yellow-400">15+</div>
-              <div className="text-xs md:text-sm text-white/80">Years Experience</div>
+             <div className="text-2xl md:text-3xl font-bold text-yellow-400">Expert Support</div>
+<div className="text-xs md:text-sm text-white/80">From Seasoned Professionals</div>
             </div>
             <div className="text-center animate-count-up" style={{animationDelay: '0.2s'}}>
               <div className="text-2xl md:text-3xl font-bold text-yellow-400">5000+</div>

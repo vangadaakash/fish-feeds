@@ -30,8 +30,8 @@ function Footer() {
                         <li><Link to="/about" className="hover:text-white">About Us</Link></li>
                         <li><Link to="/products" className="hover:text-white">Products</Link></li>
                         <li><Link to="/about" className="hover:text-white">Our Mission</Link></li>
-                        <li><Link to="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-                        <li><Link to="/terms" className="hover:text-white">Terms & Conditions</Link></li>
+                        <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
+                        <li><Link to="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link></li>
                         <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
                     </ul>
                 </div>

@@ -1,25 +1,25 @@
 function Testimonials() {
   const reviews = [
     {
-      name: "Rakesh Yadav, West Bengal",
+      name: "Rakesh Yadav, UttarPradesh",
       text: "After switching to Populerr Fish Feeds, I saw faster growth in my Rohu and Katla. The feed quality is excellent, and my profits have increased.",
       rating: 5,
       image: "farmer1"
     },
     {
-      name: "Suresh Naik, Odisha",
-      text: "I've tried many brands, but Populerr's 28/4 feed gave me the best results. It's affordable and truly value for money.",
+      name: "Suresh Naik, UttarPradesh",
+      text: "I've tried many brands, but Populerr's 4mm feed gave me the best results. It's affordable and truly value for money.",
       rating: 4,
       image: "farmer2"
     },
     {
-      name: "Priya Sharma, Andhra Pradesh",
+      name: "Priya Sharma, UttarPradesh",
       text: "The customer support is exceptional. They helped me optimize feeding schedules for my farm. Yield has improved by 25%!",
       rating: 5,
       image: "farmer3"
     },
     {
-      name: "Amit Patel, Gujarat",
+      name: "Amit Patel, UttarPradesh",
       text: "The feed pellets are uniform and don't dissolve quickly in water. My fish are healthier and growth is consistent across the pond.",
       rating: 5,
       image: "farmer4"

@@ -1,0 +1,130 @@
+/* Ensure the container doesn't overflow */
+.contact-container {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 16px 0;
+  background: #fff;
+  padding-top: 80px;
+  overflow: inherit;
+}
+
+/* Responsive flex layout */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+/* Each section takes full width on mobile, half on desktop */
+.contact-info,
+.contact-form {
+  flex: 1 1 320px;
+  min-width: 0;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 20px 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* Headings */
+.contact-heading {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+/* Contact details and icons */
+.contact-details {
+  margin-top: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.icon-container {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.contact-text h4 {
+  margin: 0 0 2px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-text p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 4px;
+  }
+  .contact-info,
+  .contact-form {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
